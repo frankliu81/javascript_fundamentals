@@ -1,0 +1,26 @@
+body {
+  background-image: url("../img/lab2_journey.jpg");
+  max-width: 100%;
+  /*copied from Jaco's solution, fill all space, no tiling*/
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.header {
+  background-color: rgba(255,0,0,0.5);
+  margin: auto;
+  width: 100%;
+  height: 20%;
+  margin-top: -30px;
+  margin-left: -5px;
+  margin-right: 20px;
+}
+
+p {
+  color: red;
+  font-size: 40px;
+  padding-top: 20px;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}

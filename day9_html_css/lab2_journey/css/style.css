@@ -1,0 +1,27 @@
+.container {
+  /*background-color: red*/
+  background: url("../img/lab2_journey.jpg");
+  width: 100%;
+
+  /*height: 100%;*/
+  /*block item container will reize to be as efficient as possible ie. size of the text box, so we specify the pixel*/
+  height: 600px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.text-container{
+  background-color: rgba(255,0,0,0.5);
+  /*opacity: 0.5;*/
+  width:100%;
+  height: 50px;
+  text-align:center;
+}
+
+p{
+  color : red;
+  /*font-size: 24px;*/
+  font-size: 2em;
+  width: 60%;
+  margin: auto;
+}

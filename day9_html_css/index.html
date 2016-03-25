@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is a poem I wrote in class">
+    <meta name="keywords" content="poetry, codecore, vancouver">
+    <meta name="author" content="Jacob Tran">
+    <title>My First Webpage</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      div {
+        background-color:lightgrey;
+        width: 50%;
+      }
+      span
+      {
+        background-color: pink;
+      }
+      .you {
+        background-color: green;
+        color: red;
+      }
+      #poem1 {
+        background-color: lightblue;
+      }
+      /* only li inside ul to be pink */
+      ul > li {
+        color: pink
+      }
+      /* paragraph with class of abc, and an id of xyz */
+      /* p.abc#xyz */
+
+    </style>
+  </head>
+  <body>
+
+    <ul>
+      <li>2 1/4 cup of all-purpose flour</li>
+      <li>1/2 teaspoon baking soda</li>
+      <li>2 cup of semi-sweet chocolate chips</li>
+    </ul>
+
+    <ol>
+      <li>2 1/4 cup of all-purpose flour</li>
+      <li>1/2 teaspoon baking soda</li>
+      <li>2 cup of semi-sweet chocolate chips</li>
+    </ol>
+
+
+    <div id ="poem1">
+      <h1 style="background-color:red">Roses&nbsp;&nbsp;&nbsp;are&nbsp;Red&nbsp;&copy;</h1>
+      <h2>by Jacob Tran</h2>
+      <p>Roses are red,<br>
+        <span>Violets</span> are blue,<br>
+        All my <span>base</span>,<br>
+        Are belong to <span class="you">you</span>.<br>
+      </p>
+  </div>
+  <hr>
+  <div id ="poem2">
+    <h1 style="background-color:red">Nothing old Can Stay</h1>
+    <h2>by Jacob Tran</h2>
+    <p> Roses are red,<br>
+      Violets are blue,<br>
+      All my <em>base</em>,<br>
+      Are belong to <strong>you<strong>.<br>
+    </p>
+</div>
+  </body>
+</html>

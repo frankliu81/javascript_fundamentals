@@ -1,0 +1,12 @@
+.header {
+  text-align: center;
+}
+
+ul.header-details {
+  list-style: none;
+}
+
+.box-skills{
+  float: left;
+  width: 40%;
+}
