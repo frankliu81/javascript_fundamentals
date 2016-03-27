@@ -1,0 +1,87 @@
+.background {
+  background-image: url("../img/lab2_journey.jpg");
+  background-repeat: no-repeat;
+  /* Scale the image to the largest size such that both its width and its height can fit inside the content area */
+  background-size: contain;
+  width: 900px;
+  height: 600px;
+}
+
+/* here is how you draw a rectangle, but you can color the text-container div
+as well */
+/*#rectangle
+{
+  width:890px;
+  height: 100px;
+  margin: 0px auto;
+  background-color: rgba(255,0,0,0.5);
+}*/
+
+
+/*.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: rgba(0,0,255,0.5);
+  transform: translate(-50%, -50%);
+}*/
+
+.text-container
+{
+  width: 890px;
+  height: 100px;
+  margin: 0px auto; /* center the div with div.background */
+  position:relative;
+  text-align: center;
+  background: rgba(255,0,0,0.5);
+}
+
+
+h1 {
+  /* width is 60% of the container */
+  width: 60%;
+
+  /* Method 1 of positioning header in the center */
+  /* use relative positioining, so margin would be applied */
+  /*position:relative;*/
+  /* top is minus the height of the text-container */
+  /*top: -100px;*/
+  /*margin: 0px auto;*/
+
+  /*Method 2 of positioning header in the center*/
+  /* translate percentage is a percentage of the object */
+  position:absolute;
+  /* position absolute elements are taken out of the flow */
+  /* margin auto with absolute means it will appear where it is
+  as if it is not positioned https://www.w3.org/wiki/CSS_absolute_and_fixed_positioning*. */
+  margin: auto;
+  /* we should translate left by 50% then translate left by 50% of the element size  */
+  /* left by 50% of container = 890 * 0.5 = 445
+  translate x by -50% of element size
+  980 * 60% = 534px * 0.5 = 267
+  total = 445 - 267 = 178 px */
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+  /* Not used: translate by 30% of the element size, in this case
+  it is 890 * 60% = 534px * 0.34 = 181px, this is just arbitrary tuning */
+  /*transform: translate(34%, 0%);*/
+
+  /*Method 3 of positioning header in the center*/
+  /*position: absolute;*/
+  /* use left 50% then back out with a negative margin that is half the width */
+  /*left: 50%;*/
+  /* negative margin, half the width of the element */
+  /* hand calculate left margin instead of using translate, it is half the width
+   of the element, to center the element after the left: 50% shift
+  900 * 60% = 540, 540/2 = 270 */
+  /*margin-top: 0px;*/
+  /*margin-left: -270px;*/
+
+  color:red;
+  /*if the parent element text-align, don't need to do it in child, it will be inherited*/
+  /*text-align:center;*/
+
+}

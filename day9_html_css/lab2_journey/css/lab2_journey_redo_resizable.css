@@ -1,0 +1,34 @@
+.container {
+  background-image: url("../img/lab2_journey.jpg");
+  background-repeat: no-repeat;
+  /* the background-image will appear to span 80% of the 'age */'
+  width: 80%;
+  /*block item container will resize to be as efficient as possible ie. size of the text box, so we specify the pixel for height*/
+  height: 800px;
+/* Sets the width and height of the background image in percent of the parent element.
+ The first value sets the width, the second value sets the height. If only one value is given,
+  the second is set to "auto"*/
+  /* This should be set to80% to match .text-container's width of 80% as well */
+  background-size: 80%;
+}
+
+.text-container {
+  width: 80%;
+  /* when container is 920 x 800 */
+  /* div text-container width is 920 * 80% = 736 */
+  /* padding at the bottom beneath the header is
+  920 * 5% = 46 (920 is the container width )*/
+  padding-bottom: 5%;
+  background-color: rgba(255,0,0,0.5); /* red with 0.5 opacity */
+  text-align: center;
+}
+
+p {
+  width: 60%;
+  margin:0px auto;
+  /*font-size: 2em;*/
+  /* makes the font size a percentage of the view port */
+  font-size: 3vw;
+  /*text-align:center;*/
+  color:red;
+}

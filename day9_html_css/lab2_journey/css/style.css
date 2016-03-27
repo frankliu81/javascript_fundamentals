@@ -4,7 +4,7 @@
   width: 100%;
 
   /*height: 100%;*/
-  /*block item container will reize to be as efficient as possible ie. size of the text box, so we specify the pixel*/
+  /*block item container will resize to be as efficient as possible ie. size of the text box, so we specify the pixel for height*/
   height: 600px;
   background-size: 100%;
   background-repeat: no-repeat;
