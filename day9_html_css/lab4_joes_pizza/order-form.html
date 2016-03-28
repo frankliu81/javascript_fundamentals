@@ -24,28 +24,28 @@
           <div class = "form__control-group grid">
             <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
                 for="name">Name</label>
-            <input id="name" class="grid__cell--one-half grid__cell--handheld-one-half"
+            <input id="name" class="grid__cell--two-third grid__cell--handheld-one-half"
                 type="text" placeholder="eg. Frank Liu"/>
           </div>
 
           <div class = "form__control-group grid">
             <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
                 for="email">E-mail</label>
-            <input id="email" class="grid__cell--one-half grid__cell--handheld-one-half"
+            <input id="email" class="grid__cell--two-third grid__cell--handheld-one-half"
                 type="text" placeholder="eg. frankliu81@gmail.com"/>
           </div>
 
           <div class = "form__control-group grid">
             <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
                 for="password">Password</label>
-            <input id="password" class="grid__cell--one-half grid__cell--handheld-one-half"
+            <input id="password" class="grid__cell--two-third grid__cell--handheld-one-half"
                 type="password"/>
           </div>
 
           <div class = "form__control-group grid">
             <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
                 for="telephone">Telephone</label>
-            <input id="telephone" class="grid__cell--one-half grid__cell--handheld-one-half"
+            <input id="telephone" class="grid__cell--two-third grid__cell--handheld-one-half"
                 type="text" placeholder="eg. 604-232-0609"/>
           </div>
 
@@ -53,14 +53,14 @@
           <div class = "form__control-group grid">
             <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
                 for="address">Address</label>
-            <input id="address" class="grid__cell--one-half grid__cell--handheld-one-half"
+            <input id="address" class="grid__cell--two-third grid__cell--handheld-one-half"
                 type="text" placeholder="eg. #24-8080 Bennett Rd."/>
           </div>
 
           <div class = "form__control-group grid">
             <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
                 for="city">City</label>
-            <input id="city" class="grid__cell--one-half grid__cell--handheld-one-half"
+            <input id="city" class="grid__cell--two-third grid__cell--handheld-one-half"
                 type="text" placeholder="eg. Richmond"/>
           </div>
 
@@ -101,26 +101,38 @@
 
           <div class = "form__control-group grid">
             <div class="option-group">
-              <input class="grid__cell--one-quarter grid__cell--handheld-one-half"
-                    type="radio" name="option" checked></label>
-              <label class="grid__cell--one-quarter grid__cell--handheld-one-half">Take Out</label>
-              <input class="grid__cell--one-quarter grid__cell--handheld-one-half"
-                    type="radio" name="option">
-              <label class="grid__cell--one-quarter grid__cell--handheld-one-half">Delivery</label>
+              <div class="grid__cell--one-quarter grid__cell--handheld-one-half option">
+                <input id="delivery"
+                      type="radio" name="option" checked></input>
+                <label for="delivery">Delivery</label>
+              </div>
+
+              <div class="grid__cell--one-quarter grid__cell--handheld-one-half option">
+                <input id="take-out"
+                      type="radio" name="option"></input>
+                 <label for="take-out">Take Out</label>
+              </div>
+
             </div>
           </div>
 
           <div class = "form__control-group grid">
-            <div class="instruction-submit-group">
+            <div class="instruction-group">
               <label class="grid__cell--one-quarter grid__cell--handheld-one-half" for="instructions">
                   Special Instructions
               </label>
-              <textarea id="instructions" class="grid__cell--one-third grid__cell--handheld-one-half"
+              <textarea id="instructions" class="grid__cell--two-third grid__cell--handheld-one-half"
                   rows=4></textarea>
             </div>
           </div>
 
-          <input type="submit" class="grid__cell--one-quarter grid__cell--handheld-one-half" value="Submit">
+          <div class = "form__control-group grid">
+            <input type="submit" class="grid__cell--one-quarter grid__cell--handheld-one-half" value="Submit">
+            <!-- clearing float style from the submit button to allow the submit button's height to be added to the container -->
+          </div>
+
+          <div style="clear: both;"></div>
+
 
         </form>
       </div>
