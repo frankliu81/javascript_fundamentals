@@ -1,15 +1,41 @@
+body{
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+h1{
+    font-size: 1.5em;
+}
+
+h2{
+    font-size: 1.25em;
+}
+
+h3{
+    font-size: 1em;
+}
+
+p{
+    font-size: 1em;
+    line-height: 1.618em;
+}
+
 .container{
   /* width is 90% of the viewport */
-  width:90%;
+  width:96%;
+
   /* http://stackoverflow.com/questions/5657964/css-why-doesn-t-percentage-height-work */
   /* by default height is set to the height of the block content */
   /* but we don't want to just override with that in pixels */
-  /* instead height can be defined in viewport width unit, 120% of the width */
+  /* instead height can be defined in viewport width unit, % of the width */
   height: 60vw;
   /* give some space at the top, and then centered */
-  margin:5% auto;
+  margin:2% auto;
   border: 1px solid darkred;
   border-radius: 10px;
+  /* allow submit button to float at bottom using position absolute */
+  /* http://stackoverflow.com/questions/526035/html-css-positioning-float-bottom */
+  position: relative;
 }
 
 .header {
@@ -21,7 +47,7 @@
 
 .header__text{
   /* give some space on the left, and centered within header */
-  width: 50%;
+  width: 60%;
   /* 100% of the header height */
   height: 100%;
   margin: 2% 2%;
@@ -32,7 +58,7 @@
 }
 
 .header__image {
-  width: 25%;
+  width: 20%;
     /* 100% of the header height */
   height: 100%;
   display: inline-block;
@@ -42,8 +68,8 @@
 .header__image img {
   /* The percentage is calculated with respect to the height of the generated
   box's containing block. */ I
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: 90%;
 }
 
 .container hr {
@@ -52,14 +78,12 @@
   height: 1px;
 }
 
-.content{
-  font-size: 2vw;
 
-}
+/* start of content */
 
 /* http://stackoverflow.com/questions/11250259/why-are-css-styles-not-inherited-by-html-form-fields */
 /* make input fields inherit css styles */
-.content input, select, textarea, button{
+.content input, select, textarea, button, datalist{
   font-size: inherit;
 }
 
@@ -67,4 +91,90 @@
 /* .content > label will only respond to immediate children but i have a containing div */
 .content label {
   margin: auto 2%;
+}
+
+[class*="grid__cell"] {
+display: inline-block;
+box-sizing: border-box;
+margin-left: 1%;
+margin-top: 1%;
+/*vertical-align: top;*/
+/*letter-spacing: normal;*/
+/*word-spacing: normal;*/
+/*border: 1px solid;*/
+}
+
+.grid__cell--one-half {
+  width: 50%;
+}
+
+.grid__cell--one-third {
+  width: 30%;
+}
+
+.grid__cell--one-quarter {
+  width: 20%;
+}
+
+textarea{
+  vertical-align:top;
+}
+
+
+.option-group {
+  margin: 3% 0%;
+}
+
+.instruction-submit-group {
+  margin: 3% 0% 3% 0%;
+}
+
+input[type="submit"] {
+  background-color:crimson;
+  color:white;
+  border-radius: 5px;
+  float: right;
+  position: absolute;
+  /* position right until it lines up nicely in the handheld in column view */
+  right: 14%;
+}
+
+
+@media all and (max-width: 1200px) and (min-width: 1000px) {
+    body{
+        font-size: 16px;
+    }
+
+    .container {
+      height: 60vw;
+    }
+
+}
+
+@media all and (max-width: 999px) and (min-width: 600px) {
+    body{
+        font-size: 14px;
+    }
+
+    .container {
+      height: 80vw;
+    }
+
+}
+
+/* mobile resolution */
+@media all and (max-width: 599px) and (min-width: 320px) {
+    body{
+        font-size: 11px;
+    }
+
+    .container {
+      height: 120vw;
+    }
+
+    .grid__cell--handheld-one-half {
+      width: 40%;
+      /*border: 1px solid;*/
+    }
+
 }

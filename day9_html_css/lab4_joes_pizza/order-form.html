@@ -10,7 +10,7 @@
 
       <div class="header">
         <div class="header__text">
-          <h1>Order Form</h1>
+          <h1>Order Form - Joe's Pizza</h1>
         </div>
         <div class="header__image">
             <img src="img/pizza.jpg"/>
@@ -21,10 +21,106 @@
 
       <div class="content">
         <form action="" method="">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" type="text" placeholder="eg. Frank Liu"/>
+          <div class = "form__control-group grid">
+            <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
+                for="name">Name</label>
+            <input id="name" class="grid__cell--one-half grid__cell--handheld-one-half"
+                type="text" placeholder="eg. Frank Liu"/>
           </div>
+
+          <div class = "form__control-group grid">
+            <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
+                for="email">E-mail</label>
+            <input id="email" class="grid__cell--one-half grid__cell--handheld-one-half"
+                type="text" placeholder="eg. frankliu81@gmail.com"/>
+          </div>
+
+          <div class = "form__control-group grid">
+            <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
+                for="password">Password</label>
+            <input id="password" class="grid__cell--one-half grid__cell--handheld-one-half"
+                type="password"/>
+          </div>
+
+          <div class = "form__control-group grid">
+            <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
+                for="telephone">Telephone</label>
+            <input id="telephone" class="grid__cell--one-half grid__cell--handheld-one-half"
+                type="text" placeholder="eg. 604-232-0609"/>
+          </div>
+
+
+          <div class = "form__control-group grid">
+            <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
+                for="address">Address</label>
+            <input id="address" class="grid__cell--one-half grid__cell--handheld-one-half"
+                type="text" placeholder="eg. #24-8080 Bennett Rd."/>
+          </div>
+
+          <div class = "form__control-group grid">
+            <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
+                for="city">City</label>
+            <input id="city" class="grid__cell--one-half grid__cell--handheld-one-half"
+                type="text" placeholder="eg. Richmond"/>
+          </div>
+
+          <div class = "form__control-group grid">
+            <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
+                for="province">Province</label>
+            <select id="province" class="grid__cell--one-quarter grid__cell--handheld-one-half">
+              <option>  </option>
+              <option selected> BC </option>
+              <option> AB </option>
+            </select>
+            <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
+                for="postal-code">Postal Code</label>
+                <input id="posta-code" class="grid__cell--one-quarter grid__cell--handheld-one-half"
+                    type="text" placeholder="eg. V6Y 1N5"/>
+          </div>
+
+          <div class = "form__control-group grid">
+            <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
+                for="pizza-type">Pizza</label>
+            <select id="pizza-type" class="grid__cell--one-quarter grid__cell--handheld-one-half">
+              <option>  </option>
+              <option selected> Supreme </option>
+              <option> Hawaiian </option>
+              <option> Vegetarian </option>
+            </select>
+            <label class="grid__cell--one-quarter grid__cell--handheld-one-half"
+                for="quantity">Quantity</label>
+            <input list="quantity" name="quantity" class="grid__cell--one-quarter grid__cell--handheld-one-half"/>
+            <datalist id="quantity">
+              <option value="1"></option>
+              <option value="2"></option>
+              <option value="3"></option>
+              <option value="4"></option>
+              <option value="5"></option>
+            </datalist>
+          </div>
+
+          <div class = "form__control-group grid">
+            <div class="option-group">
+              <input class="grid__cell--one-quarter grid__cell--handheld-one-half"
+                    type="radio" name="option" checked></label>
+              <label class="grid__cell--one-quarter grid__cell--handheld-one-half">Take Out</label>
+              <input class="grid__cell--one-quarter grid__cell--handheld-one-half"
+                    type="radio" name="option">
+              <label class="grid__cell--one-quarter grid__cell--handheld-one-half">Delivery</label>
+            </div>
+          </div>
+
+          <div class = "form__control-group grid">
+            <div class="instruction-submit-group">
+              <label class="grid__cell--one-quarter grid__cell--handheld-one-half" for="instructions">
+                  Special Instructions
+              </label>
+              <textarea id="instructions" class="grid__cell--one-third grid__cell--handheld-one-half"
+                  rows=4></textarea>
+            </div>
+          </div>
+
+          <input type="submit" class="grid__cell--one-quarter grid__cell--handheld-one-half" value="Submit">
 
         </form>
       </div>
@@ -32,4 +128,5 @@
     </div>
 
   </body>
+
 </html>
