@@ -5,9 +5,10 @@
 
 .box {
   /*width: 500px;*/
-  width:33%;
-  float:left;
-  /*display:inline-block;*/
+  /*width:33%;*/
+  /*float:left;*/
+  width:30%;
+  display:inline-block;
 
   height: 600px;
   background-color: lightgray;

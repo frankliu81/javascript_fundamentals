@@ -1,3 +1,15 @@
+/* centered a blue square with the browser */
+/*.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: rgba(0,0,255,0.5);
+  transform: translate(-50%, -50%);
+}*/
+
+
 .container {
   background-image: url("../img/lab2_journey.jpg");
   background-repeat: no-repeat;

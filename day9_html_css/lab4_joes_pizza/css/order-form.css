@@ -1,0 +1,70 @@
+.container{
+  /* width is 90% of the viewport */
+  width:90%;
+  /* http://stackoverflow.com/questions/5657964/css-why-doesn-t-percentage-height-work */
+  /* by default height is set to the height of the block content */
+  /* but we don't want to just override with that in pixels */
+  /* instead height can be defined in viewport width unit, 120% of the width */
+  height: 60vw;
+  /* give some space at the top, and then centered */
+  margin:5% auto;
+  border: 1px solid darkred;
+  border-radius: 10px;
+}
+
+.header {
+  width:100%;
+  /* 20% of the container height */
+  height: 15%;
+  /*border: 1px solid darkred;*/
+}
+
+.header__text{
+  /* give some space on the left, and centered within header */
+  width: 50%;
+  /* 100% of the header height */
+  height: 100%;
+  margin: 2% 2%;
+  color: darkred;
+  display: inline-block;
+  /* this is needed or else the inline-block will not align top */
+  vertical-align: top;
+}
+
+.header__image {
+  width: 25%;
+    /* 100% of the header height */
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.header__image img {
+  /* The percentage is calculated with respect to the height of the generated
+  box's containing block. */ I
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.container hr {
+  background-color: darkred;
+  border: none;
+  height: 1px;
+}
+
+.content{
+  font-size: 2vw;
+
+}
+
+/* http://stackoverflow.com/questions/11250259/why-are-css-styles-not-inherited-by-html-form-fields */
+/* make input fields inherit css styles */
+.content input, select, textarea, button{
+  font-size: inherit;
+}
+
+/* only the label within content will have these margins */
+/* .content > label will only respond to immediate children but i have a containing div */
+.content label {
+  margin: auto 2%;
+}

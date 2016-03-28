@@ -6,7 +6,40 @@ ul.header-details {
   list-style: none;
 }
 
-.box-skills{
+.box-skills {
   float: left;
-  width: 40%;
+  /*display: inline;*/
+  width: 50%;
+}
+
+.box-work-heading {
+  display:flex;
+  justify-content: space-between;
+}
+
+.work-title {
+  display: inline-block;
+  /*float: left;*/
+  vertical-align:top;
+  width: 60%;
+  /*border: 1px solid;*/
+}
+
+
+.work-date {
+  display: inline-block;
+  /*float: right;*/
+  vertical-align:top;
+  width: 30%;
+  /*border: 1px solid;*/
+}
+
+.work-date h3
+{
+  text-align: right;
+}
+
+.work-details li {
+  /* TRBL top right bottom left */
+  margin: 10px 0px 10px 0px;
 }
