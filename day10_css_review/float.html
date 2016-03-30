@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Float Example</title>
+    <style>
+      .box
+      {
+        width: 100px;
+        height: 100px;
+      }
+      .red {
+        float: left;
+        background-color:red;
+
+      }
+      .green {
+        float: left;
+        background-color:green;
+      }
+
+      /* it clears the float relationship between green and blue
+      but the floating relationship between blue and yello still exist */
+      .blue {
+        float: left;
+        clear: left;
+        background-color:blue;
+      }
+
+      .yellow {
+        float: left;
+        background-color:yellow;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="red box"></div>
+    <div class="green box"></div>
+    <div class="blue box"></div>
+    <div class="yellow box"></div>
+  </body>
+</html>

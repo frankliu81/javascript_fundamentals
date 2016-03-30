@@ -15,7 +15,8 @@
   background-repeat: no-repeat;
   /* the background-image will appear to span 80% of the 'age */'
   width: 80%;
-  /*block item container will resize to be as efficient as possible ie. size of the text box, so we specify the pixel for height*/
+  /*block item container will resize to be as efficient as possible
+  ie. size of the text container, so we specify the pixel for height*/
   height: 800px;
 /* Sets the width and height of the background image in percent of the parent element.
  The first value sets the width, the second value sets the height. If only one value is given,

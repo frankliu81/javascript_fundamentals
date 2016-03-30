@@ -1,3 +1,5 @@
+/* Default font sizes, to be adjusted by media query in the end of the file
+based on window size */
 body{
     font-size: 16px;
     font-family: sans-serif;
@@ -28,8 +30,10 @@ p{
   /* by default height is set to the height of the block content */
   /* but we don't want to just override with that in pixels */
   /* instead height can be defined in viewport width unit, % of the width */
+  /* in the end, i went with height auto, so the sum of the child element height
+  will automatically give the container height */
   /*height: 60vw;*/
-  /* give some space at the top, and then centered */
+  /* give some space at the top, and then center */
   margin:2% auto;
   border: 1px solid darkred;
   border-radius: 10px;
@@ -99,6 +103,7 @@ p{
 
 [class*="grid__cell"] {
 display: inline-block;
+/* The width and height properties (and min/max properties) includes content, padding and border, but not the margin */
 box-sizing: border-box;
 margin-top: 1%;
 /*vertical-align: top;*/
@@ -161,9 +166,13 @@ input[type="submit"] {
         font-size: 16px;
     }
 
+    /* manually setting heigh based on viewport width
+    but this approach does not work well with submit button
+    positioning with dynamic resizing.  Better to use height auto*/
+    /*
     .container {
-      /*height: 60vw;*/
-    }
+      height: 80vw;
+    }*/
 
 
 }
@@ -173,9 +182,6 @@ input[type="submit"] {
         font-size: 14px;
     }
 
-    .container {
-      /*height: 80vw;*/
-    }
 
 }
 
@@ -185,17 +191,14 @@ input[type="submit"] {
         font-size: 11px;
     }
 
-    .container {
-      /*height: 120vw;*/
-    }
-
+    /* override the cell with a handheld width */
     .grid__cell--handheld-one-half {
       width: 40%;
       /*border: 1px solid;*/
     }
 
+    /* position submit button right until it lines up nicely in the handheld  view */
     input[type="submit"] {
-      /* position right until it lines up nicely in the handheld in column view */
       margin-right: 16%;
     }
 

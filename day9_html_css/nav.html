@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Multiple Columns Using CSS</title>
+    <link rel="stylesheet" href="normalize.css">
     <style>
       ul{
         list-style: none;
@@ -16,6 +17,8 @@
         /*border-style: solid;*/
         /*overflow:hidden;*/
         /*width:760px;*/
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
         width:100%;
       }
       li {
@@ -25,11 +28,13 @@
         /*display: block;*/
         /*margin: 15px;*/
         /*padding: 20px;*/
-        float:left;
+        /*float:left;*/
+        /* either inline or float*/
         /*display:inline;*/
+        display:inline-block;
         /*border: 1px;*/
       }
-      #double li {width: 50%;}
+      #double li {width:50%;}
       #triple li {width: 33.33%;}
       #quad li {width: 25%;}
 
@@ -37,14 +42,12 @@
     </style>
   </head>
   <body>
-    <ul id="double">
+    <!-- for inline-block the carriage return after <li></li> element will be treated as a character
+    therefore width: 50% plus another character will not allow the next <li></li> item to fit on the same line -->
+    <!-- <ul id="double">
       <li>CSS</li>
-      <li>HTML</li>
-      <li>Ruby</li>
-      <li>JavaScript</li>
-      <li>Rails</li>
-      <li>Node</li>
-    </ul>
+      <li>HTML</li><li>Ruby</li><li>JavaScript</li><li>Rails</li><li>Node</li></ul> -->
 
+    <ul id="double"><li>CSS</li><li>HTML</li><li>Ruby</li><li>JavaScript</li><li>Rails</li><li>Node</li></ul>
   </body>
 </html>
