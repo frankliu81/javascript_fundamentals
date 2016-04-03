@@ -19,7 +19,6 @@ h3{
 
 p{
     font-size: 1em;
-    line-height: 1.618em;
 }
 
 .container{
@@ -94,9 +93,9 @@ p{
   font-size: inherit;
 }
 
-/* only the label within content will have these margins */
+/* only the label within content and the option-element (radio button with label) will have these margins */
 /* .content > label will only respond to immediate children but i have a containing div */
-.content label, .content .option{
+.content label, .content .option-element{
   margin-right: 3%;
   text-align: right;
 }
@@ -127,9 +126,7 @@ margin-top: 1%;
 textarea{
   /* without this special instructions label will be align bottom*/
   vertical-align:top;
-  /* override the default margin-top for grid__cell of 1% to fix
-  alignment issue with label*/
-  margin-top: -1%;
+
 }
 
 

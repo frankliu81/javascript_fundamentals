@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title ></title>
+  </head>
+  <body>
+    <div id="element"></div>
+  </body>
+</html>
+   <script>
+    document.body.appendChild(
+      document.createTextNode("The " +
+        document.getElementById("element").nodeName.toUpperCase() + " element is "
+        + "<SOLUTION GOES HERE>"
+        + " by default"));
+  </script>

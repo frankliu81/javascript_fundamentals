@@ -22,8 +22,11 @@
       /* it clears the float relationship between green and blue
       but the floating relationship between blue and yello still exist */
       .blue {
-        float: left;
+        /*float: left;*/
+        /* when i just have clear:left, it will still have the element appear
+        floated in Mozilla Tilt, but the left will be clear and it will go to the next line */
         clear: left;
+        /*float: none;*/
         background-color:blue;
       }
 
