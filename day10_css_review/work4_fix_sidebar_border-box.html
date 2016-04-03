@@ -1,3 +1,5 @@
+<!-- sol2 uses a combination of border box and flexbox
+no extra containers are needed beside section and aside -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,54 +8,54 @@
     <!-- <link rel="stylesheet" href="normalize.css" charset="utf-8"> -->
     <style>
 
-      /* sol2 universal box-sizing border-box */
-      /*With box-sizing: border-box;, we can change the box model to what
-      was once the "quirky" way, where an element's specified width and height
-       aren't affected by padding or borders.
-       border-box method does not allow me to create large padding and offset with margin
-       to solve the sibling div height matching problem
-       */
+      html, body {
+          height:100%;
+          margin: 0;
+      }
+
       *, *:before, *:after {
         box-sizing: border-box;
       }
 
-      body {
-        padding: 30px;
+      header {
+        height: 100px;
+
+        /* when absolute, width has to be defined */
+        width: 100%;
       }
+
       header {
         background: lightblue;
+        top: 0;
       }
 
       .content-container {
         width: 100%;
-        height: 100%;
+        /* sol2 using flexbox */
+        display: flex;
+
+
         /* sol1 */
         /*display: table-row;*/
-
-        overflow: hidden;
-
 
       }
 
       section {
-        background: lightgreen;
-        width: 75%;
-        height: 100%;
 
-        /* sol1 display inline-block has height alignment issues, which is fixed with table-cell */
-        /*sol1 */
-        /*display: table-cell;*/
+      background: lightgreen;
+      width: 75%;
 
-        /* sol2 */
-        display: inline-block;
-        vertical-align: top;
-        height: 100%;
-        padding-bottom: 500em;
-        /*margin-bottom: -500em;*/
+      /* sol1 */
+      /*display: table-cell;*/
 
-        /* original
-        /*width: 75%;*/
-        /*float: left;*/
+
+      /* sol2 */
+      display: inline-block;
+      vertical-align: top;
+
+      /* original
+      /*width: 75%;*/
+      /*float: left;*/
 
       }
       article {
@@ -62,18 +64,17 @@
       }
 
       aside {
+
         background: pink;
         width: 25%;
-        height: 100%;
 
-        /*sol1 */
+        /* sol1 display inline-block has height alignment issues, which is fixed with table-cell */
         /*display: table-cell;*/
 
-        /*sol2 */
+        /* sol2 */
         display: inline-block;
         vertical-align: top;
-        padding-bottom: 500em;
-        /*margin-bottom: -500em;*/
+
 
       }
 
@@ -82,15 +83,18 @@
         color: black;
         /* sol3 */
         /*clear: both;*/
-        height: 100px;
-
       }
 
+
       header, article, section, aside, footer {
+      /*header, article, footer {*/
         padding: 1rem;
       }
 
-
+      /*section, aside
+      {
+        padding-bottom: calc(100% - 0px);
+      }*/
 
     </style>
 
@@ -102,7 +106,7 @@
 
     <div class="content-container">
 
-        <section>
+        <section class="module">
           <article>
             <h2>Title</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo molestias ex officia eligendi reiciendis fuga magnam? Ullam ut ab doloremque accusamus iusto aliquam facilis sapiente!</p>
@@ -111,14 +115,14 @@
             <h2>Title</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo molestias ex officia eligendi reiciendis fuga magnam? Ullam ut ab doloremque accusamus iusto aliquam facilis sapiente!</p>
           </article>
-        </section><!--sol2
+        </section><!--
 
-     --><aside>
+       --><aside class="module">
           <h3>Module</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio rem ab delectus fugit repellendus perspiciatis dolor consequuntur tenetur voluptatem a vitae odit aspernatur? Voluptas quisquam corporis nostrum aspernatur aliquid harum saepe ab pariatur veniam iste ipsam alias nemo voluptatibus doloribus.</p>
         </aside>
 
-   </div>
+      </div>
 
 
     <footer>
