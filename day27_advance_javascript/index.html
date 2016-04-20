@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+
+      window.document.write("<h1>Hello Cohort12!</h1>");
+      // window.location.href = "http://tesla.com";
+      var objectCount = function(obj) {
+        return Object.keys(obj).length
+      }
+      document.write(objectCount(window));
+
+      // document.getElementById // return a single object
+      // document.getClementsbyTagName // return an array
+      var h1Elements = document.getElementsByTagName("h1")
+      for (var i=0; i < h1Elements.length; i++) {
+        h1Elements[i].style.color = "#FF0000";
+      }
+    </script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  </body>
+</html>
