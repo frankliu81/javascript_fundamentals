@@ -82,21 +82,45 @@ var notes;
 // repeat prompting when the song completes
 var onComplete = function () {
    console.log('Song finished playing');
-  songString = prompt("Please enter a song string: ");
-  notes = parseSong(songString);
-  if (notes.length > 0)
-  {
-    console.log(notes);
-    playSong(notes, bpm, onComplete);
-  }
+  // songString = prompt("Please enter a song string: ");
+  // notes = parseSong(songString);
+  // if (notes.length > 0)
+  // {
+  //   console.log(notes);
+  //   playSong(notes, bpm, onComplete);
+  // }
+  $('#play-button').text("Play Again");
+  $('#play-button').attr('disabled', false);
 }
+
+// This is for jukebox 1 with the prompt:
 
 // Sample tunes: C D E F G*3
 // D D# E C*2 E C*2
-songString = prompt("Please enter a song string: ");
-notes = parseSong(songString);
-if (notes.length > 0)
-{
-  console.log(notes);
-  playSong(notes, bpm, onComplete);
-}
+// songString = prompt("Please enter a song string: ");
+// notes = parseSong(songString);
+// if (notes.length > 0)
+// {
+//   console.log(notes);
+//   playSong(notes, bpm, onComplete);
+// }
+
+// This is for jukebox 2 with a button:
+
+$(document).ready(function() {
+  $('#play-button').on('click', function(){
+    songString = prompt("Please enter a song string: ");
+    notes = parseSong(songString);
+    if (notes.length > 0)
+    {
+      console.log(notes);
+      playSong(notes, bpm, onComplete);
+    }
+    $this = $(this)
+
+    $this.text("Playing...");
+    $this.attr('disabled', true);
+  });
+
+
+});
