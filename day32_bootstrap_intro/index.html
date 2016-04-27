@@ -1,0 +1,339 @@
+<!-- hello cohort 12! -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tufte Design Studio</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <style>
+      body {
+        /* move the jumbotron down 50px to compenstte for the top navigation*/
+        margin-top: 50px;
+      }
+      h1,h2 {
+        /* prevent the services heading from getting cut off*/
+        padding-top: -50px;
+        margin-top: 50px;
+      }
+      .company-name {
+        margin-top: 10px;
+        margin-left: 10px;
+        color: white;
+        font-size: 20px;
+      }
+      .logo-image {
+        width: 60px;
+        height: 40px;
+      }
+      .bg-orange {
+        background-color: orange;
+      }
+
+      .logo {
+        margin-top: 10px;
+        /* relative to global font size*/
+        font-size: 2em;
+      }
+
+      .img-circle {
+        width: 200px;
+        height: 200px;
+        border: 10px darkgrey solid;
+      }
+
+      .bg-grey {
+        background-color: gray;
+      }
+
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: pink;
+      }
+
+      i {
+        color: white;
+      }
+      .footer-text {
+        font-size: 1.5em;
+        color: white;
+      }
+      .footer-icons {
+          font-size: 2em;
+      }
+      .footer {
+        padding: 5px 5px 5px 5px;
+      }
+
+    </style>
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+   <script>
+     var initMap = function() {
+       var myLocation = new google.maps.LatLng(49.2799668,-123.1423351);
+
+       var mapProp = {
+         center:       myLocation,
+         zoom:         17,
+         scrollwheel:  true,
+         //draggable:    false,
+         mapTypeId:    google.maps.MapTypeId.ROADMAP
+       };
+
+       var mapDiv = document.getElementById('map');
+       var map = new google.maps.Map(mapDiv, mapProp);
+
+       var marker = new google.maps.Marker({
+         position: myLocation,
+         icon: 'https://maps.google.com/mapfiles/kml/shapes/schools_maps.png',
+         //animation: google.maps.Animation.BOUNCE
+       });
+
+       marker.setMap(map);
+       var infoWindow = new google.maps.InfoWindow({content: "CodeCore"});
+       infoWindow.open(map, marker);
+     };
+
+     google.maps.event.addDomListener(window, 'load', initMap);
+
+   </script>
+
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css"> -->
+  </head>
+  <body data-spy"scroll" data-target=".navbar" data-offset="50px">
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <a class="navbar-left" href="#">
+           <span class="glyphicon glyphicon-fire logo">
+          <!-- <img class="logo-image" src="images/logo.png"></a> -->
+        <a href="#" class="navbar-left company-name">Tufte Design Studios</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+          <ul class="nav navbar-nav navbar-right">
+            <!-- navigation items -->
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+
+      </div>
+    </nav>
+
+    <!-- jumbotron, take up the screen size -->
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#about">Toggle</button>
+
+    <div id="about" class ="collapse jumbotron text-center bg-orange">
+      <h1>Tufte Design Studio</h1>
+      <p> Making Data Beautiful.</p>
+      <form>
+        <label>Subscribe to our newsletter:</label><br>
+        <input type="email" placeholder="e.g. john@doe.com">
+        <input class="btn btn-danger" type="submit" value="Subscribe">
+      </form>
+    </div>
+
+    <!-- grid lay out with vector, font, glyphicon, svg -->
+    <div id="service" class="container text-center">
+     <h2>Services</h2>
+     <p>What We Offer</p>
+     <div class="row">
+       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+         <span class="glyphicon glyphicon-off">
+         <h4>Infographics</h4>
+         <p>Lorem ipsum dolor sit amet.</p>
+       </div>
+       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+         <span class="glyphicon glyphicon-off">
+         <h4>Logo Design</h4>
+         <p>Lorem ipsum dolor sit amet.</p>
+       </div>
+       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+         <span class="glyphicon glyphicon-off">
+         <h4>Print Design</h4>
+         <p>Lorem ipsum dolor sit amet.</p>
+       </div>
+       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+         <span class="glyphicon glyphicon-off">
+         <h4>Web Design</h4>
+         <p>Lorem ipsum dolor sit amet.</p>
+       </div>
+       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+         <span class="glyphicon glyphicon-off">
+         <h4>Web Development</h4>
+         <p>Lorem ipsum dolor sit amet.</p>
+       </div>
+       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+         <span class="glyphicon glyphicon-off">
+         <h4>Web Marketing</h4>
+         <p>Lorem ipsum dolor sit amet.</p>
+       </div>
+     </div>
+   </div>
+
+   <!-- grid lay out with raster, jpg, tiff, png, gif -->
+   <!-- grid layout raster -->
+  <div id="portfolio" class="row text-center">
+    <h2>Portfolio</h2>
+    <div class="col-md-3 col-sm-4 col-xs-12">
+      <img src="images/portfolio1.jpg" class="img-circle">
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12">
+      <img src="images/portfolio2.jpg" class="img-circle">
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12">
+      <img src="images/portfolio3.jpg" class="img-circle">
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12">
+      <img src="images/portfolio4.jpg" class="img-circle">
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12">
+      <img src="images/portfolio5.jpg" class="img-circle">
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12">
+      <img src="images/portfolio6.jpg" class="img-circle">
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12">
+      <img src="images/portfolio7.jpg" class="img-circle">
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12">
+      <img src="images/portfolio8.jpg" class="img-circle">
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12">
+      <img src="images/portfolio9.jpg" class="img-circle">
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12">
+      <img src="images/portfolio10.jpg" class="img-circle">
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12">
+      <img src="images/portfolio11.jpg" class="img-circle">
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12">
+      <img src="images/portfolio12.jpg" class="img-circle">
+    </div>
+  </div>
+
+  <!-- forms  -->
+  <div id="contact" class="container-fluid bg-grey">
+      <h2 class="text-center">Contact Us</h2>
+      <div class="row">
+        <div class="col-sm-5">
+          <p>Contact us and start your data beauification journey today!</p>
+          <p><span class="glyphicon glyphicon-map-marker"></span> Vancouver, BC</p>
+          <p><span class="glyphicon glyphicon-phone"></span> +1 604.555.5555</p>
+          <p><span class="glyphicon glyphicon-envelope"></span> jacob@codecore.ca</p>
+        </div>
+        <div class="col-sm-7 bg-grey">
+          <form>
+            <div class="col-sm-6 form-group">
+              <input class="form-control" type="text" placeholder="John Doe">
+            </div>
+            <div class="col-sm-6 form-group">
+              <input class="form-control" type="email" placeholder="john@doe.com">
+            </div>
+            <div class="col-sm-12 form-group">
+              <input class="btn btn-primary" type="submit" value="Send">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <h3>Theme Attributes</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Portfolio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vresion</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Bootstrap</td>
+          <td>3.1.1</td>
+            </tr>
+        <tr>
+          <td>Tags</td>
+          <td>porfolio, reponsive, clean, showcase</td>
+        </tr>
+        <tr>
+          <td>Release Date</td>
+          <td>June 20, 2014</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div id="pricing" class="container-fluid">
+      <div class="text-center">
+        <h2>Pricing</h2>
+        <h4>Choose a payment plan that works for you</h4>
+
+        <div class="row">
+
+          <div class="col-md-4">
+            <div class="panel panel-default text-center">
+              <div class="panel-heading"><h3>Package A</h3></div>
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              <div class="panel-footer">
+                <h3>$1000</h3>
+                <button class="btn btn-lg">Sign Up</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="panel panel-default text-center">
+              <div class="panel-heading"><h3>Package B</h3></div>
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              <div class="panel-footer">
+                <h3>$2000</h3>
+                <button class="btn btn-lg">Sign Up</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="panel panel-default text-center">
+              <div class="panel-heading"><h3>Package C</h3></div>
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              <div class="panel-footer">
+                <h3>$3000</h3>
+                <button class="btn btn-lg">Sign Up</button>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+    <div id="map"></div>
+
+    <div class="footer navbar-fixed-bottom navbar-inverse">
+      <div class="navbar-left footer-text">
+        &copy; 2016 Tufte Design Studios
+      </div>
+      <div class="navbar-right footer-icons">
+        <i class="fa fa-facebook-official" aria-hidden=true></i>
+        <i class="fa fa-twitter" aria-hidden=true></i>
+        <i class="fa fa-google-plus" aria-hidden=true></i>
+      </div>
+    </div>
+  </body>
+</html>

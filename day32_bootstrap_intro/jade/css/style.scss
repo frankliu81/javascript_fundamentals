@@ -1,0 +1,20 @@
+// comes from _partial.scss
+@import "partial";
+
+$primary-color: #333;
+
+body {
+  margin-top: 50px;
+  background-color: $primary-color;
+}
+
+nav {
+  width: 300px / 900 * 50;
+  margin: 0px;
+  ul {
+    list-style: none;
+    li {
+      color: red;
+    }
+  }
+}
