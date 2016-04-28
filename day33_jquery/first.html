@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My First jQuery Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+
+    <script>
+      $(document).ready(function(){
+        $('h1').html('My name is Resig!');
+        // $('div').html('Chaing the value through element name');
+        $('#my-div').html('Changing the div through it\'s id')
+        // $('.my-class').html('Chaning the div through it\'s class name')
+      });
+
+
+    </script>
+  </head>
+  <body>
+    <h1>Welcome to jQuery!</h1>
+    <div id="my-div" class="my-class" width="50">
+      Hello World
+    </div>
+  </body>
+</html>
