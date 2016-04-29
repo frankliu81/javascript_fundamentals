@@ -28,12 +28,15 @@ libs/jquery/1.11.2/jquery.min.js"></script>
         <button id="play-button" class="btn btn-lg btn-primary">Play All</button>
       </h1>
 
+      <label id="song-title">Enter a song to play</label>
+
       <!-- Song queue -->
       <ul id="song-queue"></ul>
 
       <!-- Song form -->
       <form id='song-form'>
-        <input name="notes" class="form-control" type="text" placeholder="Enter song notes..."/>
+        <input id="id-song-name" name="song-name" class="form-control" type="text" placeholder="Enter song name..."/>
+        <input id="id-notes" name="notes" class="form-control" type="text" placeholder="Enter song notes..."/>        
         <input class="btn btn-default" type="submit" value="Add Song">
       </form>
 

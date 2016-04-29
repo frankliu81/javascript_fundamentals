@@ -27,3 +27,8 @@
 #play-button {
   float: right;
 }
+
+#song-title {
+  position: relative;
+  color: white;
+}
