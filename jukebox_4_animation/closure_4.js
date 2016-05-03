@@ -37,4 +37,5 @@ var s = createStatusThing(function (resolve) {
 // make an ajax call, and when that call is done, we then call the response
 // callback function with the suggestions.  The response callback function
 // is within the autocomplete closure, and it will populate the text inputs
+// accordingly
 console.log(s.getStatus());

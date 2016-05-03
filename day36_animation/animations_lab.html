@@ -87,46 +87,50 @@
           $(this).css('left', "+=10");
         });
 
-        // var speed;
-        // var intervalId1;
         // // Exercise 4 - rocket acceleration
-        // $('#button-1').on('click', function(){
-        //     speed = 1;
-        //     // 30 frames per second
-        //     intervalId1 = setInterval(function(){
-        //     //var oldY = parseInt(ball.css('bottom'));
-        //     //var newY = oldY + speed;
-        //     speed += 0.5;
-        //     $("#rocket").css('bottom', "+=" + speed);
-        //     //console.log("bottom1 " + $("#rocket").css('bottom'));
-        //
-        //   }, 1000/30);
-        //
-        // });
-        //
-        // $('#button-2').on('click', function(){
-        //     clearInterval(intervalId1);
-        //     // 30 frames per second
-        //     var intervalId2 = setInterval(function(){
-        //
-        //       if (speed >= 0.5)
-        //       {
-        //         speed -= 0.5;
-        //       }
-        //
-        //       //console.log("speed " + speed);
-        //
-        //       $("#rocket").css('bottom', "-=" + speed);
-        //       console.log("bottom2 " + parseInt($("#rocket").css('bottom')));
-        //
-        //       if (parseInt($("#rocket").css('bottom')) <= 0)
-        //       {
-        //         console.log("clearinteral on 2");
-        //         clearInterval(intervalId2);
-        //       }
-        //     }, 1000/30);
-        //
-        // });
+        var speed;
+        var intervalId1;
+        var intervalId2;
+
+        $('#button-1').on('click', function(){
+            clearInterval(intervalId2);
+            speed = 1;
+            // 30 frames per second
+            intervalId1 = setInterval(function(){
+            //var oldY = parseInt(ball.css('bottom'));
+            //var newY = oldY + speed;
+            speed += 0.5;
+            $("#rocket").css('bottom', "+=" + speed);
+            //console.log("bottom1 " + $("#rocket").css('bottom'));
+
+          }, 1000/30);
+
+        });
+
+        $('#button-2').on('click', function(){
+            clearInterval(intervalId1);
+            // 30 frames per second
+            intervalId2 = setInterval(function(){
+
+              if (speed >= 0.5)
+              {
+                // leave a residual speed of 0.1 so the rocket will touch down to 0
+                speed -= 0.4;
+              }
+
+              console.log("speed " + speed);
+
+              $("#rocket").css('bottom', "-=" + speed);
+              console.log("bottom2 " + parseInt($("#rocket").css('bottom')));
+
+              if (parseInt($("#rocket").css('bottom')) <= 0)
+              {
+                console.log("clearinteral on 2");
+                clearInterval(intervalId2);
+              }
+            }, 1000/30);
+
+        });
 
         $(document).keydown(function(e) {
 
