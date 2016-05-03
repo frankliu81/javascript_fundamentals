@@ -1,0 +1,197 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <style>
+      #rocket {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        transition: width 2s, opacity 2s, transform 0.5s;
+        transform: rotate(0deg);
+        /*transform: rotate(90deg);*/
+      }
+
+      #rocket.enlarge {
+
+        width: 100px;
+      }
+
+      #rocket:active {
+        opacity: 0;
+      }
+
+      .red-border {
+        border-color: red;
+      }
+
+      .position-1 {
+        top: 100px;
+        left: 100px;
+      }
+
+      ul {
+        display: block;
+        padding-left: 0;
+        list-style: none;
+        margin-right: 10px;
+        border: 1px dashed #666;
+        min-height: 100px;
+      }
+
+      li {
+        border: 2px solid #666;
+        width: 50px;
+        padding: 10px;
+        text-align: center;
+        margin-top: 5px;
+        background-color: #2980b9;
+        color: white;
+        font-size: 20px;
+        z-index: 10;
+      }
+
+      .normal {
+        width: 50px;
+      }
+
+      .big {
+        width: 100px;
+      }
+      .sortable {
+
+      }
+
+    </style>
+
+    <script>
+      $(document).ready(function(){
+
+        $(".sortable").sortable();
+        // want to disable the caret, but that doesn't work
+        $(".sortable").disableSelection();
+        $("#list-1").sortable({connectWith: "#list-2"});
+        $("#list-2").sortable({connectWith: "#list-1"});
+
+        // Exercise 1-1
+        // console.log("first item border width: " + $("#list-item-1").css("border-width"));
+
+        // Exercise 1-4
+        $('#rocket').on('click', function(){
+          //var left = parseInt($(this).css('left'));
+          //left += 10;
+          //console.log(left);
+          //$(this).css('left', left + "px");
+          //$(this).css('left', left);
+          $(this).css('left', "+=10");
+        });
+
+        // var speed;
+        // var intervalId1;
+        // // Exercise 4 - rocket acceleration
+        // $('#button-1').on('click', function(){
+        //     speed = 1;
+        //     // 30 frames per second
+        //     intervalId1 = setInterval(function(){
+        //     //var oldY = parseInt(ball.css('bottom'));
+        //     //var newY = oldY + speed;
+        //     speed += 0.5;
+        //     $("#rocket").css('bottom', "+=" + speed);
+        //     //console.log("bottom1 " + $("#rocket").css('bottom'));
+        //
+        //   }, 1000/30);
+        //
+        // });
+        //
+        // $('#button-2').on('click', function(){
+        //     clearInterval(intervalId1);
+        //     // 30 frames per second
+        //     var intervalId2 = setInterval(function(){
+        //
+        //       if (speed >= 0.5)
+        //       {
+        //         speed -= 0.5;
+        //       }
+        //
+        //       //console.log("speed " + speed);
+        //
+        //       $("#rocket").css('bottom', "-=" + speed);
+        //       console.log("bottom2 " + parseInt($("#rocket").css('bottom')));
+        //
+        //       if (parseInt($("#rocket").css('bottom')) <= 0)
+        //       {
+        //         console.log("clearinteral on 2");
+        //         clearInterval(intervalId2);
+        //       }
+        //     }, 1000/30);
+        //
+        // });
+
+        $(document).keydown(function(e) {
+
+            var keyCode = e.keyCode;
+
+            //console.log(keyCode);
+            // left
+            //if (keyCode === 37){
+            //}
+
+            //var charCode = event.which;
+            //var key = String.fromCharCode(charCode);
+            console.log(keyCode);
+
+
+            if (keyCode === 37) { // left
+              $("#rocket").css("left", "-=10");
+              $("#rocket").css("transform", "rotate(270deg)");
+              e.preventDefault();
+            } else if (keyCode === 39) // right
+            {
+              $("#rocket").css("left", "+=10");
+              $("#rocket").css("transform", "rotate(90deg)");
+              e.preventDefault();
+            }
+            else if (keyCode === 38) // up
+            {
+              $("#rocket").css("bottom", "+=10");
+              $("#rocket").css("transform", "rotate(0deg)");
+              e.preventDefault();
+            }
+            else if (keyCode === 40) // down
+            {
+              $("#rocket").css("bottom", "-=10");
+              $("#rocket").css("transform", "rotate(180deg)");
+              e.preventDefault();
+            }
+
+            console.log("bottom " + $("#rocket").css("bottom"))
+
+        });
+
+      });
+    </script>
+  </head>
+
+  <body>
+
+    <ul id="list-1" class="sortable">
+      <li id="list-item-1">1</li>
+      <li id="list-item-2">2</li>
+      <li id="list-item-3">3</li>
+      <li id="list-item-4">4</li>
+    </ul>
+
+    <ul id="list-2" class="sortable">
+      <li id="list-item-5">5</li>
+      <li id="list-item-6">6</li>
+      <li id="list-item-7">7</li>
+      <li id="list-item-8">8</li>
+    </ul>
+
+    <button id='button-1'>Take Off</button>
+    <button id='button-2'>Land</button>
+
+    <img id="rocket" class="normal" src="rocket.png"/>
+  </body>
+</html>

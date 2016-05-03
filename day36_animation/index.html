@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Animation Demo</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+      $(document).on('ready', function(){
+
+        // console.log("document ready");
+
+        var ball = $('div#ball');
+        var field = $('div#field');
+
+
+        // var leftPos = ball.attr("style", "left");
+
+        ball.addClass('soccer-ball');
+        //ball.removeClass('soccer-ball');
+        //ball.addClass('rugby-ball');
+
+        // animating the ball with speed
+        //var leftPos = 0;
+        //var speed = 1;
+        // var intervalId = setInterval(function(){
+        //     // console.log ("initial left pos of ball: " + ball.css('left'));
+        //     // ball.attr("style", "left: " + leftPos + "");
+        //     var oldX = parseInt(ball.css('left'));
+        //     console.log("oldX: " + oldX);
+        //     var newX = oldX + speed;
+        //     console.log("newX: " + newX);
+        //     speed += 0.5;
+        //     console.log("speed: " + speed);
+        //
+        //     ball.css('left', newX);
+        //     // leftPos++;
+        //     // console.log("ball.css('left'):" + ball.css('left'));
+        //     console.log("leftPos:" + leftPos);
+        //
+        //   }, 10);
+
+        // jquery animate
+        // chain fadeOut with onComplete
+        // var onComplete = function () {
+        //   field.fadeOut('slow');
+        // };
+        // ball.fadeOut('fast', onComplete);
+
+        // pass an object to the animate function
+        //field.animate({left: 100, top: 100, opacity: 0.5})
+        // animations are chained
+        // field.animate({left: 100});
+        // field.animate({top: 100});
+        // field.animate({opacity: 0.5});
+
+      });
+
+    </script>
+    <style>
+      @keyframes color-change {
+        /*from {
+          background-color: red;
+          left: 0px;
+          bottom: 0px;
+        }
+        to  {background-color: yellow;
+          left: 1000px;
+          bottom: 300px;
+        }*/
+
+        0% {
+          background-color: red;
+          left: 0px;
+          bottom: 0px;
+        }
+        50% {
+          bottom: 300px;
+        }
+        100%  {background-color: yellow;
+          left: 1000px;
+          bottom: 0px;
+        }
+
+      }
+
+      body {
+        background-color: lightblue;
+      }
+
+      .clouds {
+        background-color: white
+      }
+
+      div#ball {
+
+        position: relative;
+        left: 0px;
+        animation-name: color-change;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+        /* loop forever*/
+        /*animation: color-change 4s infinite;*/
+      }
+      div#field {
+        background-color: green;
+        width: 1000px;
+        height: 500px;
+        top: 300px;
+        /*left: 0px;*/
+        position: relative;
+        border-radius: 500px / 300px;
+      }
+      .soccer-ball {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border-radius: 50px;
+      }
+      .rugby-ball {
+        width: 200px;
+        height: 100px;
+        background-color: brown;
+        /* different border radius on the top bot vs left right*/
+        border-radius: 100px / 50px;
+        /* different amount of curvature between x and y */
+        /*border-top-right-radius: 100px 50px;
+        border-top-left-radius: 100px 50px;
+        border-bottom-left-radius: 100px 50px;
+        border-bottom-right-radius: 100px 50px;*/
+        opacity: 1;
+        transition: opacity 3s;
+      }
+      .rugby-ball:active {
+        opacity: 0.5;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <!-- <h1>Hello</h1> -->
+    <div id="field">
+      <div id="ball"></div>
+    </div>
+
+  </body>
+
+</html>
+
+<!-- -->
