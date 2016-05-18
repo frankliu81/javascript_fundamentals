@@ -1,4 +1,5 @@
 var LIBRARY = [
+  {title: 'Happy Birthday', notes: 'F#^2*4 D*2 D*2 E D G F# D*2 D*2 E D A F#' },
   {title: 'C Major Scale', notes: 'A B C D E F G' },
   {title: 'Chromatic Scale', notes: 'A A# B C C# D D# E F F# G G#' },
   {title: 'Random Song', notes: 'A B*2 C D A*4 D E*2 F A B A A*2' },

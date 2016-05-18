@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Boxes</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div id="container-1"></div>
+    <div id="container-2"></div>
+      <script type="text/babel">
+        var Circle = React.createClass({
+          render: function(){
+            var shapeProperties = {backgroundColor: this.props.backgroundColor,
+                                    width: "50px",
+                                    height: "50px",
+                                    borderRadius: "50%"
+                                  };
+            return <div style={shapeProperties}></div>;
+          }
+        });
+
+        var BoxType = React.createClass({
+          render: function(){
+            var shapeProperties = {backgroundColor: this.props.backgroundColor,
+                                    width: this.props.dimension,
+                                    height: this.props.dimension
+                                  };
+            // Owen's solution
+            // var circles = [];
+            // for (var i=0; i<this.props.colors.length; i++)
+            // {
+            //   circles.push(<Circle backgroundColor={this.props.colors[i]}/>)
+            // }
+
+            // My solution
+            // var circles = this.props.colors.map(function(color) {
+            //   return <div style={{backgroundColor: color, width: "50px", height: "50px", borderRadius: "25px", float: "left"}}></div>;
+            // });
+
+            // Tam solution 1
+            // var circles = [<Circle color ="red"/>, <Circle color="cyan"/>];
+
+            // Tam solution 2
+            var circles = this.props.colors.map(function(color){
+              return <Circle backgroundColor={color} />;
+            });
+
+            return <div style={ shapeProperties }>
+              {circles}
+            </div>;
+
+          }
+        });
+
+        var ShapeContainer = React.createClass({
+          render: function(){
+            return <div>
+            <BoxType backgroundColor="red" dimension="300px" colors={["yellow", "blue", "green"]}/>
+            <BoxType backgroundColor="maroon" dimension="500px" colors={["grey", "blue", "white", "green", "yellow"]}/>
+            </div>;
+          }
+        });
+        ReactDOM.render(<ShapeContainer/>, document.getElementById('container'));
+        //ReactDOM.render(<Circle backgroundColor="red"/>, document.getElementById('container-1'));
+      </script>
+    </div>
+
+  </body>
+</html>

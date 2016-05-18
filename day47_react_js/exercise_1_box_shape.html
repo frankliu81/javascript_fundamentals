@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Boxes</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <script type="text/babel">
+        var BoxType = React.createClass({
+          render: function(){
+            var shapeProperties = {backgroundColor: this.props.backgroundColor,
+                                    width: this.props.width,
+                                    height: this.props.height,
+                                    borderRadius: this.props.borderRadius,
+                                    //display: "inline-block", // this will flush bottom
+                                    float: "left",
+                                    marginRight: "10px"}
+            return <div style={ shapeProperties }></div>;
+          }
+        });
+
+        var ShapeContainer = React.createClass({
+          render: function(){
+            return <div>
+            <BoxType backgroundColor="red" width="100px" height="100px" borderRadius="20px"/>
+            <BoxType backgroundColor="green" width="80px" height="80px" borderRadius="40px"/>
+            <BoxType backgroundColor="blue" width="80px" height="150px" borderRadius="20px"/>
+            <BoxType backgroundColor="maroon" width="150px" height="80px" borderRadius="20px"/>
+            <BoxType backgroundColor="black" width="100px" height="150px" borderRadius="20px"/>
+            </div>;
+          }
+        });
+        //ReactDOM.render(<RoundedRectangle backgroundColor="red" width="100px" height="100px" borderRadius="20px"/>, document.getElementById('container'));
+        //ReactDOM.render(<RoundedRectangle backgroundColor="blue" width="80px" height="150px" borderRadius="20px"/>, document.getElementById('container'));
+        ReactDOM.render(<ShapeContainer/>, document.getElementById('container'));
+      </script>
+    </div>
+
+  </body>
+</html>

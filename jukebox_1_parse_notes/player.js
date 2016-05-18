@@ -135,7 +135,7 @@ var playSong = function(song, bpm, onComplete) {
     var duration = note.beats / bps;
     var frequency = pitchFrequency(note.pitch);
 
-    playTone(frequency, duration, jukeboxAudioContext);
+    playTone(frequency, duration, jukeboxAudioContext );
 
     currNote++;
 
