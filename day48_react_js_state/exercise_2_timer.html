@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React.js</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/babel">
+      var Timer = React.createClass({
+        getInitialState: function(){
+          return {time: new Date()};
+        },
+        // solution 2
+        theTimeOfMyLife: function(){
+          //console.log("spaceman 2");
+          setTimeout(function(){
+            //console.log("spaceman 3");
+            this.setState({time: new Date()});
+            this.theTimeOfMyLife();
+          }.bind(this), 1000);
+        },
+        componentDidMount: function(){
+          //console.log("spaceman");
+          //this.theTimeOfMyLife();
+          // solution 1
+          setInterval(function(){
+            this.setState({time: new Date()});
+          }.bind(this), 1000);
+        },
+        render: function() {
+          return <div>Time is: {this.state.time.toString()} </div>;
+        }
+      });
+
+      ReactDOM.render(<Timer/>, document.getElementById('container'));
+    </script>
+  </body>
+</html>
